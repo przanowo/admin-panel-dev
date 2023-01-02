@@ -1,0 +1,13 @@
+header.header
+    div.nav.nav--tours
+        p place for logo
+    nav.nav.nav--user
+        if user
+            a.nav__el(href='/') Home
+            a.nav__el(href='/parfums') Parfums
+            a.nav__el(href='/upload') Upload
+            a.nav__el(href='/me') Account
+            a.nav__el.nav__el--logout(href='/logout') Log out 
+        else 
+            a.nav__el(href='/login') Log in
+     
