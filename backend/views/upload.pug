@@ -5,37 +5,84 @@ block content
     main.main 
         div.upload-form
             h2 Upload Products 
-            form.form-upl
-                div.form__group-upl
+            form.form-upl.form-parfum-data
+                div.form__group-upl.ma-bt-md
                     label.form__label-upl(for='name') Parfum name 
                     input#name.form__input-upl(type="text", placeholder="Armani Code", required)
-                div.form__group-upl
+                div.form__group-upl.ma-bt-md
                     label.form__label-upl(for='price') Price 
                     input#price.form__input-upl(type="number", placeholder="100", required)
-                div.form__group-upl
+                div.form__group-upl.ma-bt-md
                     label.form__label-upl(for='description') Description 
                     input#description.form__input-upl(type="text", placeholder="Parfum description", required)
-                div.form__group-upl
+                div.form__group-upl.ma-bt-md
                     label.form__label-upl(for='brand') Brand 
                     input#brand.form__input-upl(type="text", placeholder="Armani", required)
-                div.form__group-upl
+                div.form__group-upl.ma-bt-md
+                    label.form__label-upl(for='model') Model 
+                    input#model.form__input-upl(type="text", placeholder="Code", required)
+                div.form__group-upl.ma-bt-md
                     label.form__label-upl(for='quantity') Quantity
                     input#quantity.form__input-upl(type="number", placeholder="25", required)
-                div.form__group-upl
+                div.form__group-upl.ma-bt-md
                     label.form__label-upl(for='year') Year 
                     input#year.form__input-upl(type="text", placeholder="1990")
 
                 // sex, category, parfType, condition.... checkbox
+
                 div.form__group-upl
-                    label.form__label-upl(for='sex') Man
-                    input#sex.form__input-upl(type="checkbox" class="radio" value="1" name="fooby")
-                    label.form__label-upl(for='sex') Woman
-                    input#sex.form__input-upl(type="checkbox" class="radio" value="2" name="fooby") 
-                    label.form__label-upl(for='sex') Uni
-                    input#sex.form__input-upl(type="checkbox" class="radio" value="3" name="fooby]")
-                   
-                   
-                   
-                   
+                    label.form__label-upl(for="checkbox-1") Man
+                    input.form__input-uplbox(type="radio" id="checkbox-1" name="sex-group" value="man")
+                    
+                    label.form__label-upl(for="checkbox-2") Woman
+                    input.form__input-uplbox(type="radio" id="checkbox-2" name="sex-group" value="woman")
+
+                    label.form__label-upl(for="checkbox-3") Uni
+                    input.form__input-uplbox(type="radio" id="checkbox-3" name="sex-group" value="uni")
+                    hr
+                div.form__group-upl
+                    label.form__label-upl(for="checkbox-4") Parfum
+                    input.form__input-uplbox(type="radio" id="checkbox-1" name="type-group" value="parfum")
+
+                    label.form__label-upl(for="checkbox-5") EDP
+                    input.form__input-uplbox(type="radio" id="checkbox-2" name="type-group" value="edp")
+
+                    label.form__label-upl(for="checkbox-6") EDT
+                    input.form__input-uplbox(type="radio" id="checkbox-3" name="type-group" value="edt")
+                    hr
+                div.form__group-upl
+                    
+                    label.form__label-upl(for="checkbox-1") Miniature
+                    input.form__input-uplbox(type="radio" id="checkbox-1" name="category-group" value="miniature")
+
+                    label.form__label-upl(for="checkbox-2") Sample
+                    input.form__input-uplbox(type="radio" id="checkbox-2" name="category-group" value="sample")         
+                    
+                    label.form__label-upl(for="checkbox-3") Vintage
+                    input.form__input-uplbox(type="radio" id="checkbox-3" name="category-group" value="vintage")    
+
+                    label.form__label-upl(for="checkbox-4") Refilled
+                    input.form__input-uplbox(type="radio" id="checkbox-4" name="category-group" value="refilled")                                                        
+                    hr
+                div.form__group-upl
+                    label.form__label-upl(for="checkbox-1") New
+                    input.form__input-uplbox(type="radio" id="checkbox-1" name="condition-group" value="new")
+
+                    label.form__label-upl(for="checkbox-2") Used
+                    input.form__input-uplbox(type="radio" id="checkbox-2" name="condition-group" value="used")
+                    hr
+
+                div.form__group-upl
+                    label.form__label-upl(for="checkbox-1") Hidden
+                    input.form__input-uplbox(type="radio" id="checkbox-1" name="visible-group" value="hidden")
+
+                    label.form__label-upl(for="checkbox-2") Visible
+                    input.form__input-uplbox(type="radio" id="checkbox-2" name="visible-group" value="visible")                    
+                            
+                div.form__group.form__photo-upload
+                    //img.form__user-photo(src=`/img/users/${user.photo}`, alt='User photo')
+                    input.form__upload(type='file', accept='image/*', id='photo', name='photo')
+                    label(for='photo') Choose new photo
+                
                 div.form__group-upl
                     button.btn.btn--green Upload           

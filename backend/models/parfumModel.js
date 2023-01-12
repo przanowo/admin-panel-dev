@@ -45,7 +45,7 @@ const parfumSchema = new mongoose.Schema({
     required: [true, 'A parfum must have a category'],
   },
   //edp edt parfum
-  parfType: {
+  type: {
     type: String,
   },
   // allapot
@@ -55,10 +55,14 @@ const parfumSchema = new mongoose.Schema({
   year: {
     type: Number,
   },
-  // public: {
-  //   type: Boolean,
-  //   required: [true, 'Please choose public'],
+  visible: {
+    type: String,
+  },
+  // imageCover: {
+  //   type: String,
+  //   required: [true, 'A parfum must have an image'],
   // },
+  // image: [String],
 });
 
 const Parfum = mongoose.model('parfums', parfumSchema);
