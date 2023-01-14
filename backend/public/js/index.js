@@ -44,25 +44,54 @@ if (userDataForm)
 if (parfumDataForm)
   parfumDataForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    const form = new FormData();
+    form.append('name', document.getElementById('name').value);
+    form.append('price', document.getElementById('price').value);
+    form.append('description', document.getElementById('description').value);
+    form.append('brand', document.getElementById('brand').value);
+    form.append('model', document.getElementById('model').value);
+    form.append('quantity', document.getElementById('quantity').value);
+    form.append('year', document.getElementById('year').value);
+    form.append('sex', document.querySelector('input[name="sex-group"]').value);
+    form.append(
+      'type',
+      document.querySelector('input[name="type-group"]').value
+    );
+    form.append(
+      'category',
+      document.querySelector('input[name="category-group"]').value
+    );
+    form.append(
+      'condition',
+      document.querySelector('input[name="condition-group"]').value
+    );
+    form.append(
+      'visible',
+      document.querySelector('input[name="visible-group"]').value
+    );
+    form.append('imageCover', document.getElementById('imageCover').files[0]);
 
-    const name = document.getElementById('name').value;
-    const price = document.getElementById('price').value;
-    const description = document.getElementById('description').value;
-    const brand = document.getElementById('brand').value;
-    const model = document.getElementById('model').value;
-    const quantity = document.getElementById('quantity').value;
-    const year = document.getElementById('year').value;
-    const sex = document.querySelector('input[name="sex-group"]').value;
-    const type = document.querySelector('input[name="type-group"]').value;
-    const category = document.querySelector(
-      'input[name="category-group"]'
-    ).value;
-    const condition = document.querySelector(
-      'input[name="condition-group"]'
-    ).value;
-    const visible = document.querySelector('input[name="visible-group"]').value;
-    // const imageCover = document.getElementById('imageCover').value;
-    // const image = document.getElementById('image').value;
+    uploadProduct(form, 'data');
+
+    // const name = document.getElementById('name').value;
+    // const price = document.getElementById('price').value;
+    // const description = document.getElementById('description').value;
+    // const brand = document.getElementById('brand').value;
+    // const model = document.getElementById('model').value;
+    // const quantity = document.getElementById('quantity').value;
+    // const year = document.getElementById('year').value;
+    // const sex = document.querySelector('input[name="sex-group"]').value;
+    // const type = document.querySelector('input[name="type-group"]').value;
+    // const category = document.querySelector(
+    //   'input[name="category-group"]'
+    // ).value;
+    // const condition = document.querySelector(
+    //   'input[name="condition-group"]'
+    // ).value;
+    // const visible = document.querySelector('input[name="visible-group"]').value;
+    // const imageCover = document.getElementById('imageCover').files[0];
+
+    //const image = document.getElementById('image').files[];
 
     // // Get the group of radio buttons
     // const radioGroup = document.querySelector('input[name="category-group"]');
@@ -72,23 +101,25 @@ if (parfumDataForm)
 
     // console.log(selectedValue); // Will log the value of the selected radio button
 
-    uploadProduct(
-      {
-        name,
-        description,
-        price,
-        brand,
-        model,
-        quantity,
-        year,
-        sex,
-        type,
-        category,
-        condition,
-        visible,
-      },
-      'data'
-    );
+    // uploadProduct(
+    //   {
+    //     name,
+    //     description,
+    //     price,
+    //     brand,
+    //     model,
+    //     quantity,
+    //     year,
+    //     sex,
+    //     type,
+    //     category,
+    //     condition,
+    //     visible,
+    //     imageCover,
+    //     //image,
+    //   },
+    //   'data'
+    // );
   });
 
 if (userPasswordForm)

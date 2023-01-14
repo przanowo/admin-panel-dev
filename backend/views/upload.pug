@@ -80,9 +80,11 @@ block content
                     input.form__input-uplbox(type="radio" id="checkbox-2" name="visible-group" value="visible")                    
                             
                 div.form__group.form__photo-upload
-                    //img.form__user-photo(src=`/img/users/${user.photo}`, alt='User photo')
-                    input.form__upload(type='file', accept='image/*', id='photo', name='photo')
-                    label(for='photo') Choose new photo
-                
+                    img.form__user-photo(src='/img/parfums/default.jpg', alt='Parfum photo')
+                    input.form__upload(type='file', accept='image/*', id='imageCover', name='imageCover')
+                    label(for='imageCover') Choose new Cover image
+                    hr
+                    input.form__upload(type='file', accept='image/*', id='image', name='image', multiple)
+                    label(for='image') Choose images
                 div.form__group-upl
                     button.btn.btn--green Upload           

@@ -58,11 +58,11 @@ const parfumSchema = new mongoose.Schema({
   visible: {
     type: String,
   },
-  // imageCover: {
-  //   type: String,
-  //   required: [true, 'A parfum must have an image'],
-  // },
-  // image: [String],
+  imageCover: {
+    type: String,
+    //required: [true, 'A parfum must have an image'],
+  },
+  //image: [String],
 });
 
 const Parfum = mongoose.model('parfums', parfumSchema);

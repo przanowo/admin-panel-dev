@@ -11,7 +11,12 @@ const router = express.Router();
 router
   .route('/')
   .get(authController.protect, parfumController.getAllParfum)
-  .post(authController.protect, parfumController.createParfum);
+  .post(
+    authController.protect,
+    parfumController.uploadParfumImages,
+    parfumController.resizeParfumImages,
+    parfumController.createParfum
+  );
 
 router
   .route('/:id')

@@ -12128,7 +12128,7 @@ var updateSettings = /*#__PURE__*/function () {
         case 8:
           _context.prev = 8;
           _context.t0 = _context["catch"](0);
-          (0, _alerts.showAlert)('error', _context.t0.response.data.message);
+          console.log('error', _context.t0);
         case 11:
         case "end":
           return _context.stop();
@@ -12161,7 +12161,7 @@ var uploadProduct = /*#__PURE__*/function () {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           _context.prev = 0;
-          console.log(data);
+          console.log(data, 'try uploadProduct');
           _context.next = 4;
           return (0, _axios.default)({
             method: 'POST',
@@ -12171,15 +12171,14 @@ var uploadProduct = /*#__PURE__*/function () {
         case 4:
           res = _context.sent;
           if (res.data.status === 'success') {
-            console.log('success', 'Product uploaded successfully');
-            console.log('success');
+            (0, _alerts.showAlert)('success', 'Product uploaded successfully');
           }
           _context.next = 11;
           break;
         case 8:
           _context.prev = 8;
           _context.t0 = _context["catch"](0);
-          console.log(_context.t0.response.data.message);
+          (0, _alerts.showAlert)('error catch', _context.t0.response.data.message);
         case 11:
         case "end":
           return _context.stop();
@@ -12365,20 +12364,41 @@ if (userDataForm) userDataForm.addEventListener('submit', function (e) {
 });
 if (parfumDataForm) parfumDataForm.addEventListener('submit', function (e) {
   e.preventDefault();
-  var name = document.getElementById('name').value;
-  var price = document.getElementById('price').value;
-  var description = document.getElementById('description').value;
-  var brand = document.getElementById('brand').value;
-  var model = document.getElementById('model').value;
-  var quantity = document.getElementById('quantity').value;
-  var year = document.getElementById('year').value;
-  var sex = document.querySelector('input[name="sex-group"]').value;
-  var type = document.querySelector('input[name="type-group"]').value;
-  var category = document.querySelector('input[name="category-group"]').value;
-  var condition = document.querySelector('input[name="condition-group"]').value;
-  var visible = document.querySelector('input[name="visible-group"]').value;
-  // const imageCover = document.getElementById('imageCover').value;
-  // const image = document.getElementById('image').value;
+  var form = new FormData();
+  form.append('name', document.getElementById('name').value);
+  form.append('price', document.getElementById('price').value);
+  form.append('description', document.getElementById('description').value);
+  form.append('brand', document.getElementById('brand').value);
+  form.append('model', document.getElementById('model').value);
+  form.append('quantity', document.getElementById('quantity').value);
+  form.append('year', document.getElementById('year').value);
+  form.append('sex', document.querySelector('input[name="sex-group"]').value);
+  form.append('type', document.querySelector('input[name="type-group"]').value);
+  form.append('category', document.querySelector('input[name="category-group"]').value);
+  form.append('condition', document.querySelector('input[name="condition-group"]').value);
+  form.append('visible', document.querySelector('input[name="visible-group"]').value);
+  form.append('imageCover', document.getElementById('imageCover').files[0]);
+  (0, _uploadProduct.uploadProduct)(form, 'data');
+
+  // const name = document.getElementById('name').value;
+  // const price = document.getElementById('price').value;
+  // const description = document.getElementById('description').value;
+  // const brand = document.getElementById('brand').value;
+  // const model = document.getElementById('model').value;
+  // const quantity = document.getElementById('quantity').value;
+  // const year = document.getElementById('year').value;
+  // const sex = document.querySelector('input[name="sex-group"]').value;
+  // const type = document.querySelector('input[name="type-group"]').value;
+  // const category = document.querySelector(
+  //   'input[name="category-group"]'
+  // ).value;
+  // const condition = document.querySelector(
+  //   'input[name="condition-group"]'
+  // ).value;
+  // const visible = document.querySelector('input[name="visible-group"]').value;
+  // const imageCover = document.getElementById('imageCover').files[0];
+
+  //const image = document.getElementById('image').files[];
 
   // // Get the group of radio buttons
   // const radioGroup = document.querySelector('input[name="category-group"]');
@@ -12388,21 +12408,27 @@ if (parfumDataForm) parfumDataForm.addEventListener('submit', function (e) {
 
   // console.log(selectedValue); // Will log the value of the selected radio button
 
-  (0, _uploadProduct.uploadProduct)({
-    name: name,
-    description: description,
-    price: price,
-    brand: brand,
-    model: model,
-    quantity: quantity,
-    year: year,
-    sex: sex,
-    type: type,
-    category: category,
-    condition: condition,
-    visible: visible
-  }, 'data');
+  // uploadProduct(
+  //   {
+  //     name,
+  //     description,
+  //     price,
+  //     brand,
+  //     model,
+  //     quantity,
+  //     year,
+  //     sex,
+  //     type,
+  //     category,
+  //     condition,
+  //     visible,
+  //     imageCover,
+  //     //image,
+  //   },
+  //   'data'
+  // );
 });
+
 if (userPasswordForm) userPasswordForm.addEventListener('submit', /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
     var passwordCurrent, password, passwordConfirm;
@@ -12460,7 +12486,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63549" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52619" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

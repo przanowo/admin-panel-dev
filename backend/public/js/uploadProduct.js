@@ -3,7 +3,7 @@ import { showAlert } from './alerts';
 
 export const uploadProduct = async (data) => {
   try {
-    console.log(data);
+    console.log(data, 'try uploadProduct');
 
     const res = await axios({
       method: 'POST',
@@ -12,10 +12,9 @@ export const uploadProduct = async (data) => {
     });
 
     if (res.data.status === 'success') {
-      console.log('success', 'Product uploaded successfully');
-      console.log('success');
+      showAlert('success', 'Product uploaded successfully');
     }
   } catch (err) {
-    console.log(err.response.data.message);
+    showAlert('error catch', err.response.data.message);
   }
 };

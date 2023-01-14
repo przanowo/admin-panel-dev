@@ -9,7 +9,7 @@ router.get('/', authController.isLoggedIn, viewsController.getOverview);
 router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);
 router.get('/me', authController.protect, viewsController.getAccount);
 router.get('/upload', authController.protect, viewsController.getUploadForm);
-router.get('/parfums', authController.isLoggedIn);
+router.get('/parfums', authController.isLoggedIn, viewsController.getParfum);
 
 router.post(
   '/submit-user-data',
